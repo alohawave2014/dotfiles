@@ -1,33 +1,30 @@
+"-- Start Neobundle Settings
 set nocompatible
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-"--START bundle here
-Bundle 'gmarik/vundle'
-" My Bundles here:
-"
-" original repos on github
-Bundle 'Shougo/unite.vim'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" ...
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed.
+filetype off
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
+endif
+
+NeoBundle 'Shougo/neobundle.vim'
+
+"start own plugin here
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'Shougo/neomru.vim'
+
+" Color Scheme
+NeoBundle 'altercation/vim-colors-solarized'
+filetype plugin indent on
+
+"ask if you have a not installed plug-in
+NeoBundleCheck
+"-- End NeoBundle Settings
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,uft-8
 set fileformats=unix,dos,mac

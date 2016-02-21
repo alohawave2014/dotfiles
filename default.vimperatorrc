@@ -1,0 +1,36 @@
+"3.8.2 (created: 2014/02/13 23:52:43)
+"qmarks
+"qmark g link
+
+highlight Hint font-size:120%;color:white;background-color:red;padding:2px;
+noremap j 5<C-e>
+noremap k 5<C-y>
+
+"h/lでタブ移動
+"map h <C-p> 
+map h <c-pageup>
+map l gt
+"<- -> でタブ移動
+map <Left> <C-p>
+map <Right> <C-n>
+
+" assign Fn Keys
+map <F2> <C-p>
+map <F3> <C-n>
+map <F4> d
+
+"H/Lで戻る/進む
+map H <A-Left>
+map L <A-Right>
+
+"ignore mode
+map <A-[> <Insert>
+
+"再起動
+map <C-r> :restart<CR>
+
+"qmarks
+map qm <esc>:qmark<Space>
+map qa <esc>:qmarks<cr>
+
+set focuscontent
